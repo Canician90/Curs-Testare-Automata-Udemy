@@ -2,7 +2,7 @@ package org.example;
 
 /**
  * Hello world!
- MONDAY
+
  */
 public class App 
 {
