@@ -1,12 +1,10 @@
 package org.example;
 
-public class RadioControlledCar {
-    String name;
-    String color;
+public class RadioControlledCar extends AutoVehicle {
+
+
     int doorCount;
-    int wheelCount;
-    double mileage;
-    Engine engine;
+
 
 
 }
