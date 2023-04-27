@@ -11,16 +11,17 @@ public class App
 
         RadioControlledCar dacia = new RadioControlledCar(daciaEngine);
 
-        dacia.name = "Dacia";
-        dacia.color = "red";
-        dacia.doorCount = 4;
-        dacia.wheelCount = 4;
-        dacia.mileage = 8.5;
+
+        dacia.setName("Dacia");
+        dacia.setColor("red");
+        dacia.setWheelCount (4);
+        dacia.setMileage(8.5);
+        dacia.setDoorCount(4);
 
 
 
 
-        dacia.engine =daciaEngine;
+
 
         Engine ladaEngine =new Engine();
         ladaEngine.manufacturer = "Lada";
@@ -28,21 +29,42 @@ public class App
 
         RadioControlledCar lada = new RadioControlledCar(ladaEngine);
 
-        lada.name = "Lada";
-        lada.color = "blue";
-        lada.doorCount = 2;
-        lada.wheelCount = 4;
-        lada.mileage = 8;
 
+        lada.setName("Lada");
+        lada.setColor("blue");
+        lada.setWheelCount(4);
+        lada.setMileage(8);
+        lada.setDoorCount(2);
 
-
-
-        lada.engine = ladaEngine;
 
         race.firstCar = dacia;
         race.secondCar= lada;
 
         Vehicle vehicle = new Vehicle();
         vehicle.accelerate( 8.1);
+
+        System.out.println(dacia.getName());
+        System.out.println(lada.getName());
+        System.out.println(RadioControlledCar.controlType);
+        System.out.println(dacia.controlType);
+        System.out.println(lada.controlType);
+
+
+        dacia.setName("Dacia Logan");
+
+        dacia.controlType = "Improved Radio Control";
+
+        System.out.println(dacia.getName());
+        System.out.println(lada.getName());
+        System.out.println("Value when called from claas: " + RadioControlledCar.controlType);
+        System.out.println("Value when called from dacia object: " + dacia.controlType);
+        System.out.println("Value when called from lada object:"+ lada.controlType);
+
+
+
+
+
+
+
     }
 }

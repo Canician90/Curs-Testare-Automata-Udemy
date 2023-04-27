@@ -1,8 +1,8 @@
 package org.example;
 
 public class AutoVehicle extends Vehicle {
-    Engine engine;
-    double mileage;
+    private Engine engine;
+    private double mileage;
 
 
 
@@ -12,5 +12,19 @@ public class AutoVehicle extends Vehicle {
 
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
 
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
 }
