@@ -3,11 +3,13 @@ package org.example;
 
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main(String[] args ){
         Race race = new Race();
 
-        RadioControlledCar dacia =new RadioControlledCar();
+        Engine daciaEngine = new Engine();
+        daciaEngine.manufacturer = "Renault";
+
+        RadioControlledCar dacia = new RadioControlledCar(daciaEngine);
 
         dacia.name = "Dacia";
         dacia.color = "red";
@@ -16,13 +18,15 @@ public class App
         dacia.mileage = 8.5;
 
 
-        Engine daciaEngine = new Engine();
-        daciaEngine.manufacturer = "Renault";
+
 
         dacia.engine =daciaEngine;
 
+        Engine ladaEngine =new Engine();
+        ladaEngine.manufacturer = "Lada";
 
-        RadioControlledCar lada =new RadioControlledCar();
+
+        RadioControlledCar lada = new RadioControlledCar(ladaEngine);
 
         lada.name = "Lada";
         lada.color = "blue";
@@ -31,12 +35,14 @@ public class App
         lada.mileage = 8;
 
 
-        Engine ladaEngine =new Engine();
-        ladaEngine.manufacturer = "Lada";
+
 
         lada.engine = ladaEngine;
 
         race.firstCar = dacia;
         race.secondCar= lada;
+
+        Vehicle vehicle = new Vehicle();
+        vehicle.accelerate( 8.1);
     }
 }
