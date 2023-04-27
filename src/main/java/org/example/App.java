@@ -3,14 +3,15 @@ package org.example;
 
 public class App 
 {
-    public static void main(String[] args ){
-        Race race = new Race();
-
-        Engine daciaEngine = new Engine();
-        daciaEngine.manufacturer = "Renault";
-
+    public static void main(String[] args ) throws Exception {
+        Race race =new Race();
+     race.start();
+}
+}
+ /*
+             Engine daciaEngine = new Engine();
+        daciaEngine.setManufacturer("Renault");
         RadioControlledCar dacia = new RadioControlledCar(daciaEngine);
-
 
         dacia.setName("Dacia");
         dacia.setColor("red");
@@ -24,7 +25,7 @@ public class App
 
 
         Engine ladaEngine =new Engine();
-        ladaEngine.manufacturer = "Lada";
+        ladaEngine.setManufacturer("Lada");
 
 
         RadioControlledCar lada = new RadioControlledCar(ladaEngine);
@@ -35,36 +36,31 @@ public class App
         lada.setWheelCount(4);
         lada.setMileage(8);
         lada.setDoorCount(2);
+        Vehicle motorcycle = new RadioControlledMotorcycle(new Engine());
+        motorcycle.accelerate(10);
+        Race race = new Race();
+        race.getCompetitors().add(dacia);
+        race.getCompetitors().add(lada);
 
 
-        race.firstCar = dacia;
-        race.secondCar= lada;
-
-        Vehicle vehicle = new Vehicle();
-        vehicle.accelerate( 8.1);
-
-        System.out.println(dacia.getName());
-        System.out.println(lada.getName());
-        System.out.println(RadioControlledCar.controlType);
-        System.out.println(dacia.controlType);
-        System.out.println(lada.controlType);
+/*
+        for (int i = 0; i < race.getCompetitors().length; i++); {
+           if(race.getCompetitors()[i] != null){
+            System.out.println("Vehicle " + i + ": " + race.getCompetitors()[i].getName());
+                }
+            }
+*/
+/*
+        for(Vehicle vehicle : race.getCompetitors()) {
 
 
-        dacia.setName("Dacia Logan");
+            if(vehicle != null){
+                System.out.println(vehicle.getName());
+                    }
+            }
 
-        dacia.controlType = "Improved Radio Control";
-
-        System.out.println(dacia.getName());
-        System.out.println(lada.getName());
-        System.out.println("Value when called from claas: " + RadioControlledCar.controlType);
-        System.out.println("Value when called from dacia object: " + dacia.controlType);
-        System.out.println("Value when called from lada object:"+ lada.controlType);
-
-
-
-
-
-
+            race.readVehicleName();
+            race.readAccelerationSpeed();
 
     }
-}
+}*/

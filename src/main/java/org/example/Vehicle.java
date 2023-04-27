@@ -1,17 +1,33 @@
 package org.example;
 
 public class Vehicle {
-    public static String controlType = "Radio Control";
+    public static final String CONTROL_TYPE = "Radio Control";
     private String name;
     private String color;
     private int wheelCount;
+    private double currentSpeed;
 
+    private double mileage;
+    private double fuelLevel;
+    public double getMileage() {
 
-    public double accelerate (double speed) {
-        System.out.println(speed);
-        return 10.5;
+        return mileage;
+    }
+
+    public void setMileage ( double mileage){
+        this.mileage = mileage;
 
     }
+
+
+    public double getFuelLevel () {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel ( double fuelLevel){
+        this.fuelLevel = fuelLevel;
+
+}
 
     public String getName() {
         return name;
@@ -35,5 +51,22 @@ public class Vehicle {
 
     public void setWheelCount(int wheelCount) {
         this.wheelCount = wheelCount;
+    }
+
+    public double getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    public void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", wheelCount=" + wheelCount +
+                '}';
     }
 }
